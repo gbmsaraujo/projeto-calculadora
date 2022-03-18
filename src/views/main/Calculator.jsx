@@ -10,7 +10,7 @@ export default function Calculator(props) {
 
   function isFloat(num) {
     if (!isNaN(num)) {
-      if (parseInt(num) != parseFloat(num)) {
+      if (parseInt(num) !== parseFloat(num)) {
         return true;
       }
     }
@@ -36,7 +36,7 @@ export default function Calculator(props) {
   function realizaOperacao() {
     if (operador === "/") {
       let resultado = Number(valorAnterior) / Number(valor);
-      isFloat(resultado) ? (resultado = resultado.toFixed(4)) : (resultado = resultado);
+      isFloat(resultado) ? (resultado = resultado.toFixed(4)) : (Number(resultado));
       setValor(resultado);
     } else if (operador === "+") {
       let resultado = Number(valorAnterior) + Number(valor);
